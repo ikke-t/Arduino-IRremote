@@ -49,6 +49,9 @@
 #define DECODE_SAMSUNG       1
 #define SEND_SAMSUNG         1
 
+#define DECODE_TOSHIBA       1
+#define SEND_TOSHIBA         1
+
 #define DECODE_WHYNTER       1
 #define SEND_WHYNTER         1
 
@@ -106,6 +109,7 @@ typedef
 		PANASONIC,
 		JVC,
 		SAMSUNG,
+		TOSHIBA,
 		WHYNTER,
 		AIWA_RC_T501,
 		LG,
@@ -212,6 +216,10 @@ class IRrecv
 			bool  decodeSAMSUNG    (decode_results *results) ;
 #		endif
 		//......................................................................
+#		if DECODE_TOSHIBA
+			bool  decodeTOSHIBA    (decode_results *results) ;
+#		endif
+		//......................................................................
 #		if DECODE_WHYNTER
 			bool  decodeWhynter    (decode_results *results) ;
 #		endif
@@ -289,6 +297,10 @@ class IRsend
 		//......................................................................
 #		if SEND_SAMSUNG
 			void  sendSAMSUNG    (unsigned long data,  int nbits) ;
+#		endif
+		//......................................................................
+#		if SEND_TOSHIBA
+			void  sendTOSHIBA    (unsigned long data,  int nbits) ;
 #		endif
 		//......................................................................
 #		if SEND_WHYNTER

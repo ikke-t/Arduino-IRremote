@@ -65,6 +65,11 @@ int  IRrecv::decode (decode_results *results)
 	if (decodeSAMSUNG(results))  return true ;
 #endif
 
+#if DECODE_TOSHIBA
+	DBG_PRINTLN("Attempting TOSHIBA decode");
+	if (decodeTOSHIBA(results))  return true ;
+#endif
+
 #if DECODE_WHYNTER
 	DBG_PRINTLN("Attempting Whynter decode");
 	if (decodeWhynter(results))  return true ;
