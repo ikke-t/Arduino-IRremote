@@ -13,6 +13,7 @@
 // JVC and Panasonic protocol added by Kristian Lauszus (Thanks to zenwheel and other people at the original blog post)
 // LG added by Darryl Smith (based on the JVC protocol)
 // Whynter A/C ARC-110WD added by Francesco Meschia
+// Toshiba A/C RAS-10PKVP-ND by Ilkka Tengvall
 //******************************************************************************
 
 #ifndef IRremote_h
@@ -300,7 +301,8 @@ class IRsend
 #		endif
 		//......................................................................
 #		if SEND_TOSHIBA
-			void  sendTOSHIBA    (unsigned long data,  int nbits) ;
+            #include "ir_Toshiba.h"
+			void  sendTOSHIBA    (ir_toshiba_cmd_s) ;
 #		endif
 		//......................................................................
 #		if SEND_WHYNTER

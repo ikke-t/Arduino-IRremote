@@ -16,6 +16,7 @@
 // JVC and Panasonic protocol added by Kristian Lauszus (Thanks to zenwheel and other people at the original blog post)
 // LG added by Darryl Smith (based on the JVC protocol)
 // Whynter A/C ARC-110WD added by Francesco Meschia
+// Toshiba A/C RAS-10PKVP-ND by Ilkka Tengvall
 //******************************************************************************
 
 #include <avr/interrupt.h>
